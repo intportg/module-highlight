@@ -1,0 +1,40 @@
+<div id="home-slider" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+		{% for item in highlight.items %}
+			{% if loop.first %}
+				{% set itemClass = "item active" %}
+			{% else  %}
+				{% set itemClass = "item" %}
+			{% endif %}
+			<div class="{{ itemClass }}" >
+				{% if item.currentLocalization.targetUrl %}
+					{% set linkUrl = item.currentLocalization.targetUrl %}
+				{% elseif item.targetDocument %}
+					{% set linkUrl = canonicalURL(item.targetDocument) %}
+				{% endif %}
+				<a href="{{linkUrl}}">
+					<img src="{{imageURL(item.visual)}}" alt="item.visual.alt" />
+				</a>
+				<div class="carousel-caption">
+					{{ item.currentLocalization.description | richText }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	{% spaceless %} <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+		<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>{% endspaceless %}
+
+	<ol class="carousel-indicators">
+		{% for item in highlight.items %}
+			{% if loop.first %}
+				<li class="active" data-target="#home-slider" data-slide-to="{{loop.index}}"></li>
+			{% else  %}
+				<li data-target="#home-slider" data-slide-to="{{loop.index}}"></li>
+			{% endif %}
+		{% endfor %}
+	</ol>
+</div>

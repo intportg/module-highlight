@@ -1,0 +1,80 @@
+<div class="row" data-rbs-document-editor-base="" data-model="Rbs_Highlight_Highlight">
+	<div class="col-md-12">
+		<rbs-page-header sub-title="{{ i18nAttr(modelKey('Rbs_Highlight_Highlight'), ['ucf']) }}"></rbs-page-header>
+	</div>
+
+	<div data-rbs-aside-column="">
+		{% include '@Rbs_Admin/view/asides.twig' %}
+		{% include '@Rbs_Admin/view/links.twig' %}
+	</div>
+
+	<div class="document-form" data-rbs-main-column="">
+		<form data-ng-submit="submit()" data-rbs-document-editor-edit=""
+			data-rbs-document-editor-rbs-highlight-highlight-edit="">
+			<fieldset data-rbs-editor-section=""
+				data-editor-section-label="{{ i18nAttr('m.rbs.admin.admin.general_properties', ['ucf']) }}">
+
+				<rbs-field-text property="label" required="true"
+					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'label'), ['ucf']) }}">
+				</rbs-field-text>
+
+				<rbs-field-text property="title" 
+					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'title'), ['ucf']) }}">
+				</rbs-field-text>
+
+				<rbs-field-rich-text property="description" 
+					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'description'), ['ucf']) }}">
+				</rbs-field-rich-text>
+
+
+				<rbs-field property="items"
+					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'items'), ['ucf']) }}">
+					<br />
+					<div class="add-elements-bar">
+						<a href ng-click="cascadeCreate()">{{ i18n('m.rbs.collection.admin.item_create', ['ucf']) }}</a>
+					</div>
+
+					<rbs-document-list data-dlid="DLCollection1" model="Rbs_Highlight_Item" collection="document.items" extend="this"
+						toolbar="false" selectable="false" correction="true">
+						<rbs-column name="label" primary="true">
+							<a href ng-click="extend.cascadeEdit(doc)">(= doc.label =)</a>
+						</rbs-column>
+						<rbs-column name="value"></rbs-column>
+						<rbs-column name="actions" width="88" label="{{ i18nAttr('m.rbs.admin.admin.sort_actions', ['ucf']) }}">
+							<rbs-kb-switch>
+								<button rbs-kb-when="alt" ng-disabled="$first" class="btn btn-default btn-icon" type="button" ng-click="extend.moveTop($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_top', ['ucf']) }}">
+									<i class="icon-step-forward icon-rotate-270"></i>
+								</button>
+								<button rbs-kb-default="" ng-disabled="$first" class="btn btn-default btn-icon" type="button" ng-click="extend.moveUp($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_up', ['ucf']) }}">
+									<i class="icon-play icon-rotate-270"></i>
+								</button>
+							</rbs-kb-switch>
+							<rbs-kb-switch>
+								<button rbs-kb-when="alt" ng-disabled="$last" class="btn btn-default btn-icon" type="button" ng-click="extend.moveBottom($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_bottom', ['ucf']) }}">
+									<i class="icon-step-forward icon-rotate-90"></i>
+								</button>
+								<button rbs-kb-default="" ng-disabled="$last" class="btn btn-default btn-icon" type="button" ng-click="extend.moveDown($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_down', ['ucf']) }}">
+									<i class="icon-play icon-rotate-90"></i>
+								</button>
+							</rbs-kb-switch>
+						</rbs-column>
+					</rbs-document-list>
+				</rbs-field>
+
+			</fieldset>
+
+
+			<fieldset data-rbs-editor-section="activation"
+				data-editor-section-label="{{ i18nAttr('m.rbs.admin.admin.activation_properties', ['ucf']) }}"
+				data-rbs-document-activation-section="">
+			</fieldset>
+
+			<fieldset data-rbs-editor-section="systeminfo"
+				data-editor-section-label="{{ i18nAttr('m.rbs.admin.adminjs.status', ['ucf']) }}"
+				data-rbs-document-system-info-section="">
+			</fieldset>
+
+			<rbs-document-editor-button-bar></rbs-document-editor-button-bar>
+		</form>
+	</div>
+</div>

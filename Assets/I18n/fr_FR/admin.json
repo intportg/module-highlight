@@ -1,0 +1,11 @@
+{
+	"highlight_list":{
+		"message":"liste des mises en avant"
+	},
+	"highlight_create":{
+		"message":"ajouter une mise en avant"
+	},
+	"module_name":{
+		"message":"mises en avant"
+	}
+}
