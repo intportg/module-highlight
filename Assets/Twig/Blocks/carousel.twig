@@ -1,4 +1,5 @@
-<div id="home-slider" class="carousel slide" data-ride="carousel">
+<h1>TOTO</h1>
+<div id="home-slider" class="carousel slide" data-interval="{{parameters.interval}}" data-ride="carousel">
 	<div class="carousel-inner">
 		{% for item in highlight.items %}
 			{% if loop.first %}
@@ -13,7 +14,7 @@
 					{% set linkUrl = canonicalURL(item.targetDocument) %}
 				{% endif %}
 				<a href="{{linkUrl}}">
-					<img src="{{imageURL(item.visual)}}" alt="item.visual.alt" />
+					<img src="{{imageURL(item.visual, 0, parameters.height)}}" alt="item.visual.alt" />
 				</a>
 				<div class="carousel-caption">
 					{{ item.currentLocalization.description | richText }}

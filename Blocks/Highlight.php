@@ -54,6 +54,7 @@ class Highlight extends \Change\Presentation\Blocks\Standard\Block
 			$highlight = $documentManager->getDocumentInstance($highlightId);
 			$attributes['highlight'] = $highlight;
 		}
-		return 'highlight.twig';
+		$this->setTemplateModuleName($parameters->getParameter('moduleName'));
+		return $parameters->getParameter('templateName');
 	}
 }

@@ -4,5 +4,23 @@
 	},
 	"highlight_description":{
 		"message":"description"
+	},
+	"highlight_items":{
+		"message":"éléments"
+	},
+	"item":{
+		"message":"élément"
+	},
+	"item_visual":{
+		"message":"visuel"
+	},
+	"item_targetdocument":{
+		"message":"document cible"
+	},
+	"item_targeturl":{
+		"message":"URL cible"
+	},
+	"item_description":{
+		"message":"description"
 	}
 }

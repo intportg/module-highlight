@@ -26,7 +26,5 @@ class HighlightInformation extends \Change\Presentation\Blocks\Information
 		$this->setSection($i18nManager->trans('m.rbs.highlight.admin.module_name', $ucf));
 		$this->setLabel($i18nManager->trans('m.rbs.highlight.admin.highlight_label', $ucf));
 		$this->addInformationMetaForDetailBlock('Rbs_Highlight_Highlight', $i18nManager);
-		$this->addInformationMeta('template', 'Collection', true, 'default.twig')
-			 ->setCollectionCode('Rbs_Highlight_Highlight_TemplateList')->setLabel($i18nManager->trans('m.rbs.highlight.admin.template_label', $ucf));
 	}
 }

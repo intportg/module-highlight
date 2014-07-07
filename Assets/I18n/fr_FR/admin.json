@@ -7,5 +7,14 @@
 	},
 	"module_name":{
 		"message":"mises en avant"
+	},
+	"template_carousel_label":{
+		"message":"caroussel"
+	},
+	"template_carousel_height":{
+		"message":"hauteur"
+	},
+	"template_carousel_interval":{
+		"message":"intervalle de temps"
 	}
 }
