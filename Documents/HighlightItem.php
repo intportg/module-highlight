@@ -9,8 +9,8 @@
 namespace Rbs\Highlight\Documents;
 
 /**
- * @name \Rbs\Highlight\Documents\Item
+ * @name \Rbs\Highlight\Documents\HighlightItem
  */
-class Item extends \Compilation\Rbs\Highlight\Documents\Item
+class HighlightItem extends \Compilation\Rbs\Highlight\Documents\HighlightItem
 {
 }
