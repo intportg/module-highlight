@@ -8,19 +8,19 @@
 	"highlight_items":{
 		"message":"éléments"
 	},
-	"item":{
+	"highlightitem":{
 		"message":"élément"
 	},
-	"item_visual":{
+	"highlightitem_visual":{
 		"message":"visuel"
 	},
-	"item_targetdocument":{
+	"highlightitem_targetdocument":{
 		"message":"document cible"
 	},
-	"item_targeturl":{
+	"highlightitem_targeturl":{
 		"message":"URL cible"
 	},
-	"item_description":{
+	"highlightitem_description":{
 		"message":"description"
 	}
 }

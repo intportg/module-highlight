@@ -45,34 +45,5 @@
 			"labelKey": "m.rbs.admin.adminjs.new_resource | ucf"
 		},
 		"auto": true
-	},
-	"/Rbs/Highlight/Item/:id": {
-		"model": "Rbs_Highlight_Item",
-		"name": "edit",
-		"rule": {
-			"templateUrl": "Document/Rbs/Highlight/Item/edit.twig",
-			"labelKey": "m.rbs.highlight.documents.item | ucf",
-			"labelId": "id"
-		},
-		"auto": true
-	},
-	"/Rbs/Highlight/Item/:id/translate/:LCID": {
-		"model": "Rbs_Highlight_Item",
-		"name": "translate",
-		"rule": {
-			"templateUrl": "Document/Rbs/Highlight/Item/translate.twig",
-			"controller": "RbsChangeTranslateEditorController",
-			"labelKey": "m.rbs.admin.admin.translation | ucf"
-		},
-		"auto": true
-	},
-	"/Rbs/Highlight/Item/new": {
-		"model": "Rbs_Highlight_Item",
-		"name": "new",
-		"rule": {
-			"templateUrl": "Document/Rbs/Highlight/Item/new.twig",
-			"labelKey": "m.rbs.admin.adminjs.new_resource | ucf"
-		},
-		"auto": true
 	}
 }

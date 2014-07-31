@@ -22,6 +22,11 @@
 					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'description'), ['ucf']) }}">
 				</rbs-field-rich-text>
 
+				<h3>{{ i18n(propertyKey('Rbs_Highlight_Highlight', 'items'), ['ucf']) }}</h3>
+				<rbs-inline-array inline-array="document.items" new-model="Rbs_Highlight_HighlightItem"
+						data-ref-lcid="document.refLCID" data-lcid="document.LCID">
+				</rbs-inline-array>
+
 			</fieldset>
 
 			<fieldset data-rbs-editor-section="activation"

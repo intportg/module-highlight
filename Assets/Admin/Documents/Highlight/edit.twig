@@ -26,41 +26,10 @@
 					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'description'), ['ucf']) }}">
 				</rbs-field-rich-text>
 
-
-				<rbs-field property="items"
-					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'items'), ['ucf']) }}">
-					<br />
-					<div class="add-elements-bar">
-						<a href ng-click="cascadeCreate()">{{ i18n('m.rbs.collection.admin.item_create', ['ucf']) }}</a>
-					</div>
-
-					<rbs-document-list data-dlid="DLCollection1" model="Rbs_Highlight_Item" collection="document.items" extend="this"
-						toolbar="false" selectable="false" correction="true">
-						<rbs-column name="label" primary="true">
-							<a href ng-click="extend.cascadeEdit(doc)">(= doc.label =)</a>
-						</rbs-column>
-						<rbs-column name="value"></rbs-column>
-						<rbs-column name="actions" width="88" label="{{ i18nAttr('m.rbs.admin.admin.sort_actions', ['ucf']) }}">
-							<rbs-kb-switch>
-								<button rbs-kb-when="alt" ng-disabled="$first" class="btn btn-default btn-icon" type="button" ng-click="extend.moveTop($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_top', ['ucf']) }}">
-									<i class="icon-step-forward icon-rotate-270"></i>
-								</button>
-								<button rbs-kb-default="" ng-disabled="$first" class="btn btn-default btn-icon" type="button" ng-click="extend.moveUp($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_up', ['ucf']) }}">
-									<i class="icon-play icon-rotate-270"></i>
-								</button>
-							</rbs-kb-switch>
-							<rbs-kb-switch>
-								<button rbs-kb-when="alt" ng-disabled="$last" class="btn btn-default btn-icon" type="button" ng-click="extend.moveBottom($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_bottom', ['ucf']) }}">
-									<i class="icon-step-forward icon-rotate-90"></i>
-								</button>
-								<button rbs-kb-default="" ng-disabled="$last" class="btn btn-default btn-icon" type="button" ng-click="extend.moveDown($index)" title="{{ i18nAttr('m.rbs.admin.admin.move_down', ['ucf']) }}">
-									<i class="icon-play icon-rotate-90"></i>
-								</button>
-							</rbs-kb-switch>
-						</rbs-column>
-					</rbs-document-list>
-				</rbs-field>
-
+				<h3>{{ i18n(propertyKey('Rbs_Highlight_Highlight', 'items'), ['ucf']) }}</h3>
+				<rbs-inline-array inline-array="document.items" new-model="Rbs_Highlight_HighlightItem"
+						data-ref-lcid="document.refLCID">
+				</rbs-inline-array>
 			</fieldset>
 
 
