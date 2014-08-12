@@ -14,22 +14,7 @@
 			<fieldset data-rbs-editor-section=""
 				data-editor-section-label="{{ i18nAttr('m.rbs.admin.admin.general_properties', ['ucf']) }}">
 
-				<rbs-field-text property="label" required="true"
-					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'label'), ['ucf']) }}">
-				</rbs-field-text>
-
-				<rbs-field-text property="title" 
-					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'title'), ['ucf']) }}">
-				</rbs-field-text>
-
-				<rbs-field-rich-text property="description" 
-					label="{{ i18nAttr(propertyKey('Rbs_Highlight_Highlight', 'description'), ['ucf']) }}">
-				</rbs-field-rich-text>
-
-				<h3>{{ i18n(propertyKey('Rbs_Highlight_Highlight', 'items'), ['ucf']) }}</h3>
-				<rbs-inline-array inline-array="document.items" new-model="Rbs_Highlight_HighlightItem"
-						data-ref-lcid="document.refLCID">
-				</rbs-inline-array>
+				{% include '@Rbs_Highlight/Documents/Highlight/properties.twig' %}
 			</fieldset>
 
 
